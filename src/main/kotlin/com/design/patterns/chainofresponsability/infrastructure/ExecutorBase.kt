@@ -1,20 +1,20 @@
-package com.design.patterns.chainofresponsability.infrastructure.sync
+package com.design.patterns.chainofresponsability.infrastructure
 
-import com.design.patterns.chainofresponsability.infrastructure.exception.ContextNotInitializedException
-import com.design.patterns.chainofresponsability.infrastructure.exception.SkipStepException
+import com.design.patterns.chainofresponsability.exception.ContextNotInitializedException
+import com.design.patterns.chainofresponsability.exception.SkipStepException
 
-abstract class SyncExecutorBase<T> {
+class ExecutorBase<T> {
 
-    private val steps = mutableListOf<SyncStepBase<T>>()
-    private lateinit var currentSyncStep: SyncStepBase<T>
+    private val steps = mutableListOf<StepBase<T>>()
+    private lateinit var currentSyncStep: StepBase<T>
     private var currentContext: T? = null
 
-    fun initContext(context: T): SyncExecutorBase<T> {
+    fun initContext(context: T): ExecutorBase<T> {
         this.currentContext = context
         return this
     }
 
-    fun addStep(syncStep: SyncStepBase<T>): SyncExecutorBase<T> {
+    fun addStep(syncStep: StepBase<T>): ExecutorBase<T> {
         this.steps.add(syncStep)
         return this
     }
@@ -40,5 +40,4 @@ abstract class SyncExecutorBase<T> {
         return currentContext!!
     }
 
-    abstract fun execute(context: T)
 }

@@ -1,6 +1,6 @@
-package com.design.patterns.chainofresponsability.infrastructure.sync
+package com.design.patterns.chainofresponsability.infrastructure
 
-interface SyncStepBase<T> {
+interface StepBase<T> {
 
     fun execute(context: T): T
 
