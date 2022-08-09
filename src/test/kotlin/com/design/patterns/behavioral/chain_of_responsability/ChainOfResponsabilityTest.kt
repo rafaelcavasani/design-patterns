@@ -1,9 +1,9 @@
-package com.design.patterns.chainofresponsability
+package com.design.patterns.behavioral.chain_of_responsability
 
-import com.design.patterns.chainofresponsability.context.ExecutorContext
+import com.design.patterns.behavioral.chain_of_responsability.context.ExecutorContext
 import org.junit.jupiter.api.Test
 
-class ExampleExecutorTest {
+class ChainOfResponsabilityTest {
 
     private val executor = ExampleExecutor()
 

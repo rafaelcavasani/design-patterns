@@ -1,7 +1,7 @@
-package com.design.patterns.chainofresponsability.steps
+package com.design.patterns.behavioral.chain_of_responsability.steps
 
-import com.design.patterns.chainofresponsability.infrastructure.StepBase
-import com.design.patterns.chainofresponsability.context.ExecutorContext
+import com.design.patterns.behavioral.chain_of_responsability.infrastructure.StepBase
+import com.design.patterns.behavioral.chain_of_responsability.context.ExecutorContext
 
 class StepThree: StepBase<ExecutorContext> {
 

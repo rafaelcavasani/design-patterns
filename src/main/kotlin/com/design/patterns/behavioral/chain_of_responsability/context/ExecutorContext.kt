@@ -1,4 +1,4 @@
-package com.design.patterns.chainofresponsability.context
+package com.design.patterns.behavioral.chain_of_responsability.context
 
 data class ExecutorContext(
     var attributeOne: String,

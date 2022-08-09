@@ -1,4 +1,4 @@
-package com.design.patterns.chainofresponsability.infrastructure
+package com.design.patterns.behavioral.chain_of_responsability.infrastructure
 
 interface StepBase<T> {
 

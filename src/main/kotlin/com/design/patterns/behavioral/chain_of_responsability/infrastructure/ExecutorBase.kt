@@ -1,7 +1,7 @@
-package com.design.patterns.chainofresponsability.infrastructure
+package com.design.patterns.behavioral.chain_of_responsability.infrastructure
 
-import com.design.patterns.chainofresponsability.exception.ContextNotInitializedException
-import com.design.patterns.chainofresponsability.exception.SkipStepException
+import com.design.patterns.behavioral.chain_of_responsability.exception.ContextNotInitializedException
+import com.design.patterns.behavioral.chain_of_responsability.exception.SkipStepException
 
 class ExecutorBase<T> {
 

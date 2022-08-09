@@ -1,11 +1,11 @@
-package com.design.patterns.chainofresponsability
+package com.design.patterns.behavioral.chain_of_responsability
 
-import com.design.patterns.chainofresponsability.context.ExecutorContext
-import com.design.patterns.chainofresponsability.infrastructure.ExecutorBase
-import com.design.patterns.chainofresponsability.infrastructure.StepBase
-import com.design.patterns.chainofresponsability.steps.StepOne
-import com.design.patterns.chainofresponsability.steps.StepThree
-import com.design.patterns.chainofresponsability.steps.StepTwo
+import com.design.patterns.behavioral.chain_of_responsability.context.ExecutorContext
+import com.design.patterns.behavioral.chain_of_responsability.infrastructure.ExecutorBase
+import com.design.patterns.behavioral.chain_of_responsability.infrastructure.StepBase
+import com.design.patterns.behavioral.chain_of_responsability.steps.StepOne
+import com.design.patterns.behavioral.chain_of_responsability.steps.StepThree
+import com.design.patterns.behavioral.chain_of_responsability.steps.StepTwo
 import org.springframework.stereotype.Component
 
 @Component
