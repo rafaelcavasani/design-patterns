@@ -1,7 +1,9 @@
 package com.design.patterns.creational.factory_method
 
 import com.design.patterns.DesignPatternsApplication
-import org.junit.jupiter.api.Assertions
+import com.design.patterns.creational.factory_method.impl.Iphone
+import com.design.patterns.creational.factory_method.impl.Motorola
+import com.design.patterns.creational.factory_method.impl.Samsung
 import org.junit.jupiter.api.Test
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.context.SpringBootTest
@@ -13,46 +15,27 @@ import org.springframework.boot.test.context.SpringBootTest
 class FactoryMethodTest {
 
     @Autowired
-    lateinit var connectionDBFactory: ConnectionDBFactory
+    lateinit var phoneFactory: PhoneFactory
 
     @Test
-    fun `factory method test minimun MySQL`() {
-        val type = "MySQL"
-        val category = "minimum"
-        val connectionDBFactory = connectionDBFactory.getConnection(type, category)
-        Assertions.assertEquals(connectionDBFactory.dbType, "mySQL")
-        Assertions.assertEquals(connectionDBFactory.username, "")
-        Assertions.assertEquals(connectionDBFactory.password, "")
+    fun `iphone factory method test`() {
+        val type = PhoneTypeEnum.IPHONE
+        val phone = phoneFactory.factory(type)
+        assert(phone is Iphone)
     }
 
     @Test
-    fun `factory method test complete MySQL`() {
-        val type = "MySQL"
-        val category = "complete"
-        val connectionDBFactory = connectionDBFactory.getConnection(type, category)
-        Assertions.assertEquals(connectionDBFactory.dbType, "mySQL")
-        Assertions.assertEquals(connectionDBFactory.username, "root")
-        Assertions.assertEquals(connectionDBFactory.password, "root")
+    fun `samsung factory method test`() {
+        val type = PhoneTypeEnum.SAMSUNG
+        val phone = phoneFactory.factory(type)
+        assert(phone is Samsung)
     }
 
     @Test
-    fun `factory method test minimun ORACLE`() {
-        val type = "ORACLE"
-        val category = "minimum"
-        val connectionDBFactory = connectionDBFactory.getConnection(type, category)
-        Assertions.assertEquals(connectionDBFactory.dbType, "oracle")
-        Assertions.assertEquals(connectionDBFactory.username, "")
-        Assertions.assertEquals(connectionDBFactory.password, "")
-    }
-
-    @Test
-    fun `factory method test complete ORACLE`() {
-        val type = "ORACLE"
-        val category = "complete"
-        val connectionDBFactory = connectionDBFactory.getConnection(type, category)
-        Assertions.assertEquals(connectionDBFactory.dbType, "oracle")
-        Assertions.assertEquals(connectionDBFactory.username, "oracle")
-        Assertions.assertEquals(connectionDBFactory.password, "oracle")
+    fun `motorola factory method test`() {
+        val type = PhoneTypeEnum.MOTOROLA
+        val phone = phoneFactory.factory(type)
+        assert(phone is Motorola)
     }
 
 }
