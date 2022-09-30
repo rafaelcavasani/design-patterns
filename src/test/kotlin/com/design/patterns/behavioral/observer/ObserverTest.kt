@@ -10,7 +10,7 @@ class ObserverTest {
         observer.subscribe(SubscriberOne())
         observer.subscribe(SubscriberTwo())
 
-        observer.alertAllSubscribers()
+        observer.alertAllSubscribers("observerEvent")
     }
 
 }

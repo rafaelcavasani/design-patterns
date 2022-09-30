@@ -1,5 +1,5 @@
 package com.design.patterns.behavioral.observer
 
 interface Subscriber {
-    fun alert()
+    fun alert(event: String)
 }

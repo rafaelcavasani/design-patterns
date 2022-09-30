@@ -9,9 +9,9 @@ class Observer(
         subscribers.add(subscriber)
     }
 
-    fun alertAllSubscribers() {
+    fun alertAllSubscribers(event: String) {
         subscribers.forEach {
-            it.alert()
+            it.alert(event)
         }
     }
 
